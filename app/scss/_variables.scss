@@ -1,0 +1,41 @@
+$background: #E5E5E5;
+
+// colors
+$black: #252733;
+$grey: #9FA2B4;
+$light-grey: #C5C7CD;
+$white: #fff;
+$blue: #3751FF;
+$red: #F12B2C;
+$yellow: #FEC400;
+$green: #29CC97;
+
+
+$main-color-dark: $black;
+$main-color-light: $grey;
+$main-color-active: $blue;
+
+// menu
+$menu-background: #363740;
+$menu-background-active: #9FA2B4;
+$menu-color: #A4A6B3;
+$menu-color-active: #DDE2FF;
+
+// sections
+$section-borders-color: #DFE0EB;
+$section-background: $white;
+
+// tasks
+$urgent-task-color: $yellow;
+$new-task-color: $green;
+$default-task-color: #F0F1F7;
+$default-task-text-color: $grey;
+$task-text-color: $white;
+
+// tickets
+
+// tickets priority
+$ticket-priority-text-color: $white;
+$high-ticket-priority-color: $red;
+$normal-ticket-priority-color: $green;
+$low-ticket-priority-color: $yellow;
