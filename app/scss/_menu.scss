@@ -1,0 +1,65 @@
+@import "variables";
+
+.menu {
+  width: $menu-width-desktop;
+  height: $menu-height-desktop;
+  min-height: $min-height-desktop;
+  position: fixed;
+  background-color: $menu-background-color;
+  min-width: $menu-min-width-desktop;
+  max-width: $menu-max-width-desktop;
+
+  .menu__body {
+    .menu__logo {
+      display: flex;
+      margin: $topic-container-desktop;
+
+      .menu__image {
+
+      }
+      .menu__title {
+        align-self: center;
+        margin-left: 5%;
+        opacity: 0.7;
+        color: $menu-color;
+        font-size: 1.19em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+    }
+
+    .menu__tabs {
+      list-style: none;
+      margin-bottom: 20%;
+      padding: 0;
+      letter-spacing: 0.2px;
+      font-size: 1em;
+      font-weight: 400;
+
+      .menu__tab {
+        background-color: $menu-background-color;
+        color: $menu-color;
+        padding: $container-desktop;
+        border-left: $menu-background-color solid 3px;
+
+        .menu__tab-title {
+          padding-left: 7%;
+        }
+      }
+
+      .menu__tab_active {
+        background-color: #9FA2B414;
+        color: $menu-color-active;
+        border-left: $menu-color-active solid 3px;
+      }
+
+      .menu__tab:last-child {
+        border-top: $section-borders-color solid 1px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+    }
+  }
+}
