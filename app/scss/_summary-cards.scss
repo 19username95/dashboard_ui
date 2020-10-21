@@ -1,0 +1,41 @@
+@import "variables";
+
+.summary__cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+
+  .summary__cards--card {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10%;
+    cursor: pointer;
+    padding: 5%;
+    font-weight: 700;
+
+    .summary__cards--title {
+      padding: 3%;
+      color: $card-title-color;
+      font-size: 1em;
+      letter-spacing: 0.4px;
+    }
+    .summary__cards--amount {
+      padding: 3%;
+      color: $card-amount-color;
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
+  }
+
+  .summary__cards--card:hover {
+    border: $card-active-color 1px solid;
+    color: $card-active-color;
+    box-shadow:
+      0 0 0 2px rgb(221,226,255);
+  }
+  .summary__cards--card:hover .summary__cards--title,
+  .summary__cards--card:hover .summary__cards--amount {
+    color: $card-active-color;
+  }
+}

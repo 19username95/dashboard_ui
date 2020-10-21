@@ -1,4 +1,4 @@
-$background: #E5E5E5;
+$background: #F7F8FC;
 $font-family-mulish: Mulish, mulish;
 $topic-container-desktop: 12% 12% 22% 12%;
 $container-desktop: 8% 10%;
@@ -34,6 +34,14 @@ $menu-logo-color-inside: $white;
 // sections
 $section-borders-color: #DFE0EB;
 $section-background: $white;
+
+// cards
+$border: 1px solid #DFE0EB;
+$border-radius: 8px;
+$card-background-color: $white;
+$card-title-color: $grey;
+$card-amount-color: $black;
+$card-active-color: $blue;
 
 // tasks
 $urgent-task-color: $yellow;

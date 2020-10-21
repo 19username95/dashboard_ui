@@ -1,0 +1,20 @@
+{
+  "summaryCards": [
+    {
+      "name": "Unresolved",
+      "amount": 60
+    },
+    {
+      "name": "Overdue",
+      "amount": 16
+    },
+    {
+      "name": "Open",
+      "amount": 43
+    },
+    {
+      "name": "On hold",
+      "amount": 64
+    }
+  ]
+}
