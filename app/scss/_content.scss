@@ -1,0 +1,13 @@
+@import "variables";
+
+.content {
+  margin-left: $menu-width-desktop;
+
+  .content__page {
+    display: none;
+  }
+
+  .content__page_active {
+    display: block;
+  }
+}

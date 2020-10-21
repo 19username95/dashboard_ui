@@ -1,16 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0,
+        maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.min.css">
   <link href="https://fonts.googleapis.com/css?family=Mulish" rel="stylesheet">
-    <script defer src="js/scripts.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="js/scripts.min.js"></script>
 </head>
 <body>
-    Hello world
+<section class="menu">
+  <div class="menu__body">
+    <div class="menu__logo">
+      <svg class="menu__image" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="16" fill="#3751FF"/>
+        <path d="M11 10C11 9.44772 11.4477 9 12 9H15.9905C18.2127 9 19.9333 9.60955 21.1524 10.8287C22.3841
+        12.0478 23 13.765 23 15.9803C23 18.2088 22.3841 19.9391 21.1524 21.1713C19.9333 22.3904 18.2127
+        23 15.9905 23H12C11.4477 23 11 22.5523 11 22V10Z" fill="url(#paint0_linear)"/>
+        <defs>
+          <linearGradient id="paint0_linear" x1="11" y1="9" x2="23" y2="23" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0.7"/>
+            <stop offset="1" stop-color="white"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="menu__title">Dashboard</div>
+    </div>
+    <ul class="menu__tabs">
+      <li class="menu__tab menu__tab_active" data-page-id="#overview-page">
+        <i class="menu__tab-icon fas fa-chart-pie"></i>
+        <span class="menu__tab-title">Overview</span>
+      </li>
+      <li class="menu__tab" data-page-id="#tickets-page">
+        <i class="menu__tab-icon fas fa-ticket-alt"></i>
+        <span class="menu__tab-title">Tickets</span>
+      </li>
+      <li class="menu__tab" data-page-id="contacts-page">
+        <i class="menu__tab-icon fas fa-users"></i>
+        <span class="menu__tab-title">Contacts</span>
+      </li>
+      <li class="menu__tab" data-page-id="tasks-page">
+        <i class="menu__tab-icon fas fa-user-tie"></i>
+        <span class="menu__tab-title">Tasks</span>
+      </li>
+      <li class="menu__tab" data-page-id="articles-page">
+        <i class="menu__tab-icon fas fa-book"></i>
+        <span class="menu__tab-title">Articles</span>
+      </li>
+
+      <li class="menu__tab" data-page-id="settings-page">
+        <i class="menu__tab-icon fas fa-cog"></i>
+        <span class="menu__tab-title">Settings</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="content">
+  
+  <section id="overview-page" class="content__page content__page_active">
+
+  </section>
+
+  <section id="tickets-page" class="content__page ">
+  </section>
+
+  <section id="contacts-page" class="content__page ">
+  </section>
+
+  <section id="tasks-page" class="content__page ">
+  </section>
+
+  <section id="articles-page" class="content__page ">
+  </section>
+
+  <section id="settings-page" class="content__page ">
+  </section>
+
+</section>
 </body>
 </html>

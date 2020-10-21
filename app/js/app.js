@@ -1,5 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // this function runs when the DOM is ready, i.e. when the document has been parsed
+$( document ).ready(function() {
+});
 
-  // all js code should go below this line
+$('.menu__tabs .menu__tab').on('click', function (e) {
+  e.preventDefault();
+  $(this).siblings().removeClass('menu__tab_active');
+  $(this).addClass('menu__tab_active');
+  let target = $(this).attr('data-page-id');
+  $(target).addClass('content__page_active');
+  $('.content > .content__page').not(target).removeClass('content__page_active');
 });
