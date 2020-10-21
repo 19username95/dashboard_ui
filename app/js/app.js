@@ -7,5 +7,5 @@ $('.menu__tabs .menu__tab').on('click', function (e) {
   $(this).addClass('menu__tab_active');
   let target = $(this).attr('data-page-id');
   $(target).addClass('content__page_active');
-  $('.content > div').not(target).removeClass('content__page_active');
+  $('.content > .content__page').not(target).removeClass('content__page_active');
 });
