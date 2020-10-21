@@ -35,16 +35,23 @@
       letter-spacing: 0.2px;
       font-size: 1em;
       font-weight: 400;
+    //  cursor: pointer;
 
       .menu__tab {
         background-color: $menu-background-color;
         color: $menu-color;
         padding: $container-desktop;
         border-left: $menu-background-color solid 3px;
+        transition: all .2s ease-in-out;
 
         .menu__tab-title {
           padding-left: 7%;
         }
+      }
+
+      .menu__tab:hover {
+        background-color: #9FA2B414;
+        color: $menu-color-active;
       }
 
       .menu__tab_active {
