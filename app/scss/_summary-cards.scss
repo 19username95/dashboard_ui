@@ -3,13 +3,12 @@
 .summary__cards {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 25%);
-
+  grid-template-columns: repeat(4, 23%);
+  grid-column-gap: $space-between;
   .summary__cards--card {
     display: inline-flex;
     flex-direction: column;
     text-align: center;
-    margin: 10%;
     cursor: pointer;
     padding: 5%;
     font-weight: 700;

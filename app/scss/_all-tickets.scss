@@ -1,0 +1,44 @@
+@import "variables";
+
+.all-tickets {
+  margin: $space-between 0;
+  .all-tickets__header {
+    padding: 2.5% 3% 5% 2.5%;
+    display: flex;
+    justify-content: space-between;
+
+    .all-tickets__title {
+      font-weight: 700;
+      font-size: 1.2em;
+      letter-spacing: 0.4px;
+      color: $tickets-title-color;
+    }
+
+    .all-tickets__buttons-panel {
+      flex-basis: 15%;
+      display: flex;
+      justify-content: space-between;
+
+      .all-tickets__button {
+        display: flex;
+        align-items: center;
+
+        .all-tickets__button-title {
+          font-weight: 600;
+          font-size: 0.8em;
+          color: #4B506D;
+          letter-spacing: 0.2px;
+          margin-left: -20%;
+          display: flex;
+          align-items:center;
+        }
+
+        .all-tickets__button-icon:before {
+          color: #C5C7CD;
+          font-size: 0.8em;
+          margin-left: -150%;
+        }
+      }
+    }
+  }
+}
