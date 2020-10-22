@@ -41,4 +41,27 @@
       }
     }
   }
+
+  .all-tickets__tickets {
+    width: 100%;
+    margin: 0;
+    .all-tickets__ticket {
+
+      .all-tickets__ticket-details {
+        width: 43%;
+      }
+      .all-tickets__customer-name {
+        width: 23%;
+      }
+      .all-tickets__date {
+        width: 17%;
+      }
+      .all-tickets__priority {
+        width: 8.5%;
+      }
+      .all-tickets__ticket-menu-button {
+        width: 8.5%;
+      }
+    }
+  }
 }

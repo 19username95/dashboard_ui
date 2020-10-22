@@ -1,0 +1,84 @@
+{
+  "tickets": [
+    {
+      "title": "Contact Email not Linked",
+      "lastUpdate": "1 days",
+      "customerName": "Tom",
+      "customerSurname": "Cruise",
+      "createdDate": "24.05.2019",
+      "deadlineDate": "May 26, 2019 18:30:00",
+      "priority": "high",
+      "photoUrl": "mocks/images/avatar1.png"
+    },
+    {
+      "title": "Adding Images to Featured Posts",
+      "lastUpdate": "1 days",
+      "customerName": "Matt",
+      "customerSurname": "Damon",
+      "createdDate": "24.05.2019",
+      "deadlineDate": "May 26, 2019 8:00:00",
+      "priority": "low",
+      "photoUrl": "mocks/images/avatar2.png"
+    },
+    {
+      "title": "When will I be charged this month?",
+      "lastUpdate": "1 days",
+      "customerName": "Robert",
+      "customerSurname": "Downey",
+      "createdDate": "24.05.2019",
+      "deadlineDate": "May 26, 2019 19:30:00",
+      "priority": "high",
+      "photoUrl": "mocks/images/avatar3.png"
+    },
+    {
+      "title": "Payment not going through",
+      "lastUpdate": "2 days",
+      "customerName": "Christian",
+      "customerSurname": "Bale",
+      "createdDate": "24.05.2019",
+      "deadlineDate": "May 25, 2019 17:00:00",
+      "priority": "normal",
+      "photoUrl": "mocks/images/avatar4.png"
+    },
+    {
+      "title": "Unable to add replies",
+      "lastUpdate": "2 days",
+      "customerName": "Henry",
+      "customerSurname": "Cavil",
+      "createdDate": "24.05.2019",
+      "deadlineDate": "May 25, 2019 16:00:00",
+      "priority": "high",
+      "photoUrl": "mocks/images/avatar5.png"
+    },
+    {
+      "title": "Downtime since last week",
+      "lastUpdate": "3 days",
+      "customerName": "Chris",
+      "customerSurname": "Evans",
+      "createdDate": "23.05.2019",
+      "deadlineDate": "May 25, 2019 14:00:00",
+      "priority": "normal",
+      "photoUrl": "mocks/images/avatar6.png"
+    },
+    {
+      "title": "Referral Bonus",
+      "lastUpdate": "4 days",
+      "customerName": "Sam",
+      "customerSurname": "Smith",
+      "createdDate": "22.05.2019",
+      "deadlineDate": "May 25, 2019 11:30:00",
+      "priority": "low",
+      "photoUrl": "mocks/images/avatar7.png"
+    },
+    {
+      "title": "How do I change my password?",
+      "lastUpdate": "6 days",
+      "customerName": "Steve",
+      "customerSurname": "Rogers",
+      "createdDate": "21.05.2019",
+      "deadlineDate": "May 24, 2019 13:00:00",
+      "priority": "normal",
+      "photoUrl": "mocks/images/avatar8.png"
+    }
+  ]
+}
