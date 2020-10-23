@@ -13,6 +13,9 @@
         integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
         crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+          integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+          crossorigin="anonymous"></script>
   <script defer src="js/scripts.min.js"></script>
 </head>
 <body>
@@ -67,9 +70,35 @@
   <section id="overview-page" class="content__page content__page_active">
 
     <section class="summary__cards"></section>
+    <section class="all-tickets card">
+      <div class="all-tickets__header">
+        <div class="all-tickets__title">All tickets</div>
+        <div class="all-tickets__buttons-panel">
+          <div class="all-tickets__button">
+            <i class="all-tickets__button-icon fas fa-sort-amount-up"></i>
+            <span class="all-tickets__button-title">Sort</span>
+          </div>
+          <div class="all-tickets__button">
+            <i class="all-tickets__button-icon fas fa-filter"></i>
+            <span class="all-tickets__button-title">Filter</span>
+          </div>
+        </div>
+      </div>
+      <div class="all-tickets__tickets">
+        <div class="all-tickets__ticket">
+          <div class="all-tickets__ticket-details">Ticket details</div>
+          <div class="all-tickets__customer-name">Customer name</div>
+          <div class="all-tickets__date">Date</div>
+          <div class="all-tickets__priority">Priority</div>
+          <div class="all-tickets__ticket-menu-button"></div>
+        </div>
+        <div class="all-tickets__ticket-border"></div>
+
+      </div>
+    </section>
 
   </section>
-
+<!--
   <section id="tickets-page" class="content__page ">
   </section>
 
@@ -84,7 +113,7 @@
 
   <section id="settings-page" class="content__page ">
   </section>
-
+-->
 </section>
 </body>
 </html>

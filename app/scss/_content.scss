@@ -5,6 +5,9 @@
 
   .content__page {
     display: none;
+    margin: 0 auto;
+    max-width: 1680px;
+    padding: 0 $space-between;;
   }
 
   .content__page_active {

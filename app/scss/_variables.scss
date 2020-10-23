@@ -1,6 +1,7 @@
 $background: #F7F8FC;
 $font-family-mulish: Mulish, mulish;
 $topic-container-desktop: 12% 12% 22% 12%;
+$space-between: 3.5%;
 $container-desktop: 8% 10%;
 $min-height-desktop: 500px;
 
@@ -14,10 +15,10 @@ $red: #F12B2C;
 $yellow: #FEC400;
 $green: #29CC97;
 
-
 $main-color-dark: $black;
 $main-color-light: $grey;
 $main-color-active: $blue;
+$main-color-borders: #DFE0EB;
 
 // menu
 $menu-background-color: #363740;
@@ -32,11 +33,11 @@ $menu-logo-color-outside: $blue;
 $menu-logo-color-inside: $white;
 
 // sections
-$section-borders-color: #DFE0EB;
+$section-borders-color: $main-color-borders;
 $section-background: $white;
 
 // cards
-$border: 1px solid #DFE0EB;
+$border: 1px solid $main-color-borders;
 $border-radius: 8px;
 $card-background-color: $white;
 $card-title-color: $grey;
@@ -51,9 +52,13 @@ $default-task-text-color: $grey;
 $task-text-color: $white;
 
 // tickets
-
+$tickets-title-color: $black;
+$tickets-subtitle-color: $light-grey;
+$tickets-table-title-color: $grey;
+$ticket-border: $main-color-borders;
+$ticket-active-background-color: #3751FF0A;
 // tickets priority
-$ticket-priority-text-color: $white;
-$high-ticket-priority-color: $red;
-$normal-ticket-priority-color: $green;
-$low-ticket-priority-color: $yellow;
+$ticket-priority-color: $white;
+$high-ticket-priority-background-color: $red;
+$normal-ticket-priority-background-color: $green;
+$low-ticket-priority-background-color: $yellow;
