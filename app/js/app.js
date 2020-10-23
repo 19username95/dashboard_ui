@@ -37,27 +37,30 @@ const renderAllTickets = ({ tickets }) => {
     let date = new Date(ticket.deadlineDate);
 
     container.append(`
-    <tr class="all-tickets__ticket">
-
-        <th class="all-tickets__ticket-details">
-            <div class="all-tickets__ticket-photo"><img alt="" src="${ticket.photoUrl}"/></div>
-            <div class="all-tickets__ticket-title">${ticket.title}</div>
-            <div class="all-tickets__last-update">Updated ${ticket.lastUpdate} ago</div>
-        </th>
-
-         <th class="all-tickets__customer-name">
+      <div class="all-tickets__ticket">
+        <div class="all-tickets__ticket-details">
+            <div class="all-tickets__ticket-photo">
+                <img class="all-tickets__ticket-image" alt="" src="${ticket.photoUrl}"/>
+            </div>
+            <div class="all-tickets__ticket-info">
+              <div class="all-tickets__ticket-title">${ticket.title}</div>
+              <div class="all-tickets__last-update">Updated ${ticket.lastUpdate}</div>
+            </div>
+        </div>
+         <div class="all-tickets__customer">
             <div class="all-tickets__customer-name">${ticket.customerName} ${ticket.customerSurname}</div>
-            <div class="all-tickets__createdDate">on ${ticket.createdDate}</div>
-         </th>
-         <th class="all-tickets__date-time">
+            <div class="all-tickets__created-date">on ${ticket.createdDate}</div>
+         </div>
+         <div class="all-tickets__date-time">
             <div class="all-tickets__date">${moment(ticket.deadlineDate).format("MMM DD, YYYY")}</div>
-            <div class="all-tickets__date">${moment(ticket.deadlineDate).format('LT')}</div>
-         </th>
-         <th class="all-tickets__priority">${ticket.priority}</th>
-         <th class="all-tickets__more-button">
-            <i class="fas fa-ellipsis-v"></i>
-         </th>
-      </tr>
+            <div class="all-tickets__time">${moment(ticket.deadlineDate).format('LT')}</div>
+         </div>
+         <div class="all-tickets__priority all-tickets__priority-${ticket.priority}">${ticket.priority}</div>
+         <div class="all-tickets__more-button">
+            <i class="all-tickets__button-icon fas fa-ellipsis-v"></i>
+         </div>
+      </div>
+      <div class="all-tickets__ticket-border"></div>
     `);
   });
 }
