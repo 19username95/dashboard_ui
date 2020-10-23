@@ -9,3 +9,7 @@ body {
   margin: 0;
   font-family: $font-family-mulish;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
