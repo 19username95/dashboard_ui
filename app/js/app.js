@@ -3,8 +3,14 @@ $( document ).ready(function() {
     .then(res => res.json())
     .then(renderSummary);
   fetch('/mocks/all-tickets.json')
-    .then(tickets => tickets.json())
+    .then(res => res.json())
     .then(renderAllTickets);
+  fetch('/mocks/unresolved-tickets.json')
+    .then(res => res.json())
+    .then(renderUnresolvedTickets);
+  fetch('/mocks/tasks.json')
+    .then(res => res.json())
+    .then(renderTasks);
 });
 
 // menu logic
@@ -30,7 +36,7 @@ const renderSummary = ({ summaryCards }) => {
   });
 }
 
-// ball tickets from json
+// all tickets from json
 const renderAllTickets = ({ tickets }) => {
   const container = $('.all-tickets__tickets');
   tickets.map((ticket, i) => {
@@ -61,6 +67,37 @@ const renderAllTickets = ({ tickets }) => {
          </div>
       </div>
       <div class="all-tickets__ticket-border"></div>
+    `);
+  });
+}
+
+// unresolved tickets from json
+const renderUnresolvedTickets = ({unresolvedTickets}) => {
+  const container = $('.unresolved-tickets__items');
+  unresolvedTickets.map((ticket, i) => {
+    container.append(`
+    <div class="unresolved-tickets__item">
+      <div class="unresolved-tickets__item-title">${ticket.name}</div>
+      <div class="unresolved-tickets__item-count">${ticket.count}</div>
+    </div>
+    <div class="unresolved-tickets__item-border"></div>
+    `);
+  });
+}
+
+// tasks from json
+const renderTasks = ({tasks}) => {
+  const container = $('.tasks__tasks-list');
+  tasks.map((task, i) => {
+    let ifChecked = task.completed===true?'checked':'';
+
+    container.append(`
+      <div class="tasks__list-border"></div>
+      <div class="tasks__task task">
+        <input type="checkbox" class="task__checkbox" `+ ifChecked +`>
+        <div class="task__title">${task.title}</div>
+        <div class="task__status task__status-${task.status}">${task.status}</div>
+      </div>
     `);
   });
 }

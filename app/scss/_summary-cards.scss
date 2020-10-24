@@ -2,9 +2,6 @@
 
 .summary__cards {
   width: 100%;
-  //display: grid;
-  //grid-template-columns: repeat(4, 23%);
-  //grid-column-gap: $space-between;
   display: flex;
   .summary__cards--card {
     margin-left: $space-between / 2;

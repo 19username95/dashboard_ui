@@ -1,6 +1,73 @@
 @import "variables";
 
 .unresolved-tickets {
-  display: inline-block;
+  .unresolved-tickets__header {
+    padding: $space-between*2;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
 
+    .unresolved-tickets__title {
+      font-weight: 700;
+      font-size: 1.1875em;
+      letter-spacing: 0.4px;
+      color: $tickets-title-color;
+    }
+    .unresolved-tickets__subtitle {
+      grid-row: 2;
+      grid-column: 1;
+      font-weight: 400;
+      font-size: 0.75em;
+      color: $grey;
+      letter-spacing: 0.1px;
+      padding-top: 10px;
+
+      .unresolved-tickets__group {
+        color: $black;
+      }
+    }
+
+    .unresolved-tickets__details-link {
+      grid-row: 1;
+      grid-column: 2;
+      justify-self: right;
+      letter-spacing: 0.2px;
+      color: $blue;
+      font-size: 0.875em;
+      align-self: center;
+      text-decoration: none;
+    }
+  }
+
+  .unresolved-tickets__items {
+    letter-spacing: 0.2px;
+    font-size: 0.875em;
+    font-weight: 600;
+    padding-bottom: $space-between/2;
+
+    .unresolved-tickets__item {
+      padding: 4% $space-between*2;
+      display: grid;
+      grid-template-columns: 80% auto;
+      grid-template-rows: minmax(15px, 30px);
+      .unresolved-tickets__item-title {
+        color: $black;
+        align-self: center;
+      }
+
+      .unresolved-tickets__item-count {
+        justify-self: right;
+        color: $grey;
+        align-self: center;
+      }
+    }
+
+    .unresolved-tickets__item-border {
+      width: 100%;
+      border-bottom: 1px solid $ticket-border;
+    }
+    .unresolved-tickets__item-border:last-child {
+      border:none;
+    }
+  }
 }
