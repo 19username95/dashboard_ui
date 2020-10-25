@@ -14,14 +14,25 @@
   .page-header__button {
     align-self: center;
     justify-self: center;
-    display: flex;
+    display: grid;
+
+    * {
+      grid-row: 1;
+      grid-column: 1;
+    }
 
     .page-header__button-icon:before {
       font-size: .875em;
     }
 
     .page-header__button-new-notification {
-
+      width: 8px;
+      height: 8px;
+      border: 1px solid $background;
+      border-radius: 50%;
+      background-color: $blue;
+      justify-self: end;
+      transform: translate(20%, -20%);
     }
   }
 
