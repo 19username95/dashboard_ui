@@ -65,11 +65,44 @@
     </ul>
   </div>
 </section>
+
 <section class="content">
 
   <section id="overview-page" class="content__page content__page_active">
 
     <section class="summary__cards"></section>
+
+    <div class="container_columns_2">
+      <section class="unresolved-tickets card">
+        <div class="unresolved-tickets__header">
+          <div class="unresolved-tickets__title">Unresolved tickets</div>
+          <div class="unresolved-tickets__subtitle">Group: <span class="unresolved-tickets__group">Support</span></div>
+          <a class="unresolved-tickets__details-link">View details</a>
+        </div>
+        <div class="unresolved-tickets__items"></div>
+      </section>
+
+      <section class="tasks card">
+        <div class="tasks__header">
+          <div class="tasks__title">Tasks</div>
+          <div class="tasks__subtitle">Today</div>
+          <a class="tasks__details-link">View details</a>
+        </div>
+        <div class="tasks__tasks-list">
+          <div class="tasks__create-task">
+            <div class="tasks__create-title">Create task</div>
+            <div class="tasks__create-button">
+              <svg class="tasks__create-button-plus" width="12" height="12" viewBox="0 0 12 12"
+                   fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 1V11" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round"/>
+                <path d="M11 6L1 6" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <section class="all-tickets card">
       <div class="all-tickets__header">
         <div class="all-tickets__title">All tickets</div>
