@@ -1,0 +1,44 @@
+@import "variables";
+
+.page-header {
+  padding-top: $space-between;
+  padding-bottom: 5%;
+  display: grid;
+  grid-template-columns: auto 5% 5% 5% 20% 8%;
+
+  .page-header__title {
+    font-size: 1.5em;
+    align-self: center;
+  }
+
+  .page-header__button {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+
+    .page-header__button-icon:before {
+      font-size: .875em;
+    }
+
+    .page-header__button-new-notification {
+
+    }
+  }
+
+  .page-header__divider {
+    height: 80%;
+    width: 1px;
+    border-left: 1px solid $main-color-borders;
+    justify-self: center;
+    align-self: end;
+  }
+
+  .page-header__user-names {
+    align-self: center;
+  }
+  .page-header__user-avatar {
+    border-radius: 50%;
+    border: 3px solid transparent;
+    box-shadow: 0 0 0 2px $main-color-borders;
+  }
+}
