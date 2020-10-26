@@ -60,13 +60,8 @@ function reRenderAllTickets () {
 }
 
 const renderAllTickets = ({tickets}) => {
-
   let numPages = Math.ceil(tickets.length / elementsPerPage);
-
-  let page_span = document.getElementById("current-tickets-page");
-  page_span.innerHTML = currentPage + ' of ' + numPages;
- // $('current-tickets-page').append(`${currentPage} of ${numPages}`);
-
+  
   if ( currentPage > numPages ) {
     currentPage--;
     return;
@@ -75,6 +70,12 @@ const renderAllTickets = ({tickets}) => {
     currentPage = 1;
     return ;
   }
+
+  let page_span = document.getElementById("current-tickets-page");
+  let ticketStart = (currentPage-1) * elementsPerPage + 1;
+  let ticketEnd = currentPage * elementsPerPage;
+  page_span.innerHTML = (ticketStart + '-' + ticketEnd + ' of ' + numPages);
+ // $('current-tickets-page').append(`${currentPage} of ${numPages}`);
 
   const container = $('.all-tickets__tickets').empty();
 
