@@ -3,53 +3,70 @@
 .page-header {
   padding-top: $space-between;
   padding-bottom: 5%;
-  display: grid;
-  grid-template-columns: auto 5% 5% 5% 20% 8%;
+  display: flex;
+  justify-content: space-between;
 
-  .page-header__title {
-    font-size: 1.5em;
-    align-self: center;
+  .page-header__title-container {
+    display: flex;
+
+    .page-header__title {
+      font-size: 1.5em;
+      align-self: center;
+    }
   }
 
-  .page-header__button {
-    align-self: center;
-    justify-self: center;
+  .page-header__user-panel {
+    width: 42%;
+    max-width: 450px;
+    min-width: 380px;
+
     display: grid;
+    grid-template-columns: auto 10% 10% 35% 17%;
 
-    * {
-      grid-row: 1;
-      grid-column: 1;
+    .page-header__button {
+      align-self: center;
+      justify-self: right;
+      display: grid;
+
+      * {
+        grid-row: 1;
+        grid-column: 1;
+      }
+
+      .page-header__button-icon:before {
+        font-size: .875em;
+      }
+
+      .page-header__button-new-notification {
+        width: 8px;
+        height: 8px;
+        border: 1px solid $background;
+        border-radius: 50%;
+        background-color: $blue;
+        justify-self: end;
+        transform: translate(20%, -20%);
+      }
     }
 
-    .page-header__button-icon:before {
-      font-size: .875em;
+    .page-header__divider {
+      height: 80%;
+      width: 1px;
+      border-left: 1px solid $main-color-borders;
+      justify-self: right;
+      align-self: end;
     }
 
-    .page-header__button-new-notification {
-      width: 8px;
-      height: 8px;
-      border: 1px solid $background;
+    .page-header__user-names {
+      align-self: center;
+      justify-self: right;
+      //padding-right: 20%;
+    }
+
+    .page-header__user-avatar {
       border-radius: 50%;
-      background-color: $blue;
-      justify-self: end;
-      transform: translate(20%, -20%);
+      border: 3px solid transparent;
+      box-shadow: 0 0 0 2px $main-color-borders;
+      justify-self: right;
     }
-  }
-
-  .page-header__divider {
-    height: 80%;
-    width: 1px;
-    border-left: 1px solid $main-color-borders;
-    justify-self: center;
-    align-self: end;
-  }
-
-  .page-header__user-names {
-    align-self: center;
-  }
-  .page-header__user-avatar {
-    border-radius: 50%;
-    border: 3px solid transparent;
-    box-shadow: 0 0 0 2px $main-color-borders;
   }
 }
