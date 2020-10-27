@@ -2,6 +2,8 @@
 
 .all-tickets {
   margin: $space-between 0;
+  display: flex;
+  flex-direction: column;
 
   .all-tickets__header {
     padding: $space-between 3% 5% $space-between;
@@ -137,13 +139,13 @@
         letter-spacing: 0.5px;
       }
       .all-tickets__priority-high {
-        background-color: $high-ticket-priority-background-color !important;
+        background-color: $high-ticket-priority-background-color;
       }
       .all-tickets__priority-normal {
-        background-color: $normal-ticket-priority-background-color !important;
+        background-color: $normal-ticket-priority-background-color;
       }
       .all-tickets__priority-low {
-        background-color: $low-ticket-priority-background-color !important;
+        background-color: $low-ticket-priority-background-color;
       }
       .all-tickets__more-button {
         color: #C5C7CD;
@@ -152,29 +154,8 @@
         margin: auto;
       }
     }
-    .all-tickets__ticket:first-child {
-      padding-top: 0;
-      padding-bottom: 1%;
-      color: $tickets-table-title-color;
-      font-weight: 700;
-      font-size: 0.875em;
-      letter-spacing: 0.2px;
 
-      .all-tickets__ticket-details {
-        grid-template-columns: 100%;
-      }
-
-      .all-tickets__priority {
-        background-color: $white;
-        text-transform: none;
-        color: $tickets-table-title-color;
-        font-size: 1em;
-        letter-spacing: 0.2px;
-        padding: 0;
-        margin: 0;
-      }
-    }
-    .all-tickets__ticket:not(:first-child):hover {
+    .all-tickets__ticket:hover {
       background-color: $ticket-active-background-color;
     }
 
@@ -182,8 +163,44 @@
       width: 100%;
       border-bottom: 1px solid $ticket-border;
     }
-    .all-tickets__ticket-border:first-child {
-      border-bottom: 2px solid $ticket-border;
+  }
+
+  .all-tickets__footer {
+    display: grid;
+    grid-template-columns: auto 10% 10% 5% 5%;
+    margin: 2% $space-between;
+
+
+    .all-tickets__tickets-per-page-selector-label {
+      justify-self: right;
+      padding-right: 2%;
+
+
+      .all-tickets__tickets-per-page-selector {
+        background: $background;
+        color: #4B506D;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 0 !important;
+        width: 10px;
+        text-align: center;
+        padding-left: 2%;
+      }
+    }
+    .all-tickets__tickets-per-page-selector-icon {
+      align-self: center;
+    }
+
+    .all-tickets__current-page {
+      margin: auto;
+    }
+
+    .all-tickets__page-button, .all-tickets__page-button:focus {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      margin: auto;
     }
   }
 }

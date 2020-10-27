@@ -2,15 +2,14 @@ $( document ).ready(function() {
   fetch('/mocks/summary.json')
     .then(res => res.json())
     .then(renderSummary);
-  fetch('/mocks/all-tickets.json')
-    .then(res => res.json())
-    .then(renderAllTickets);
   fetch('/mocks/unresolved-tickets.json')
     .then(res => res.json())
     .then(renderUnresolvedTickets);
   fetch('/mocks/tasks.json')
     .then(res => res.json())
     .then(renderTasks);
+
+  reRenderAllTickets();
 });
 
 // menu logic
@@ -36,39 +35,84 @@ const renderSummary = ({ summaryCards }) => {
   });
 }
 
-// all tickets from json
-const renderAllTickets = ({ tickets }) => {
-  const container = $('.all-tickets__tickets');
-  tickets.map((ticket, i) => {
-    let date = new Date(ticket.deadlineDate);
+// all tickets
+let currentPage = 1;
+let elementsPerPage = 8;
+
+ // $('all-tickets__tickets-per-page-selector').on('click', function (e) {
+ //   e.preventDefault();
+ //
+ // })
+
+function prevPage()
+{
+  currentPage--;
+  reRenderAllTickets();
+}
+
+function nextPage()
+{
+  currentPage++;
+  reRenderAllTickets();
+}
+
+function reRenderAllTickets () {
+  fetch('/mocks/all-tickets.json')
+    .then(res => res.json())
+    .then(renderAllTickets);
+}
+
+const renderAllTickets = ({tickets}) => {
+  let numPages = Math.ceil(tickets.length / elementsPerPage);
+
+  if ( currentPage > numPages ) {
+    currentPage--;
+    return;
+  }
+  if ( currentPage <= 0 ) {
+    currentPage = 1;
+    return ;
+  }
+
+  let pagesRanges = document.getElementById("current-tickets-page");
+  let ticketStart = (currentPage-1) * elementsPerPage + 1;
+  let ticketEnd = (currentPage * elementsPerPage) < tickets.length ?
+                  (currentPage * elementsPerPage) : tickets.length;
+  pagesRanges.innerHTML = (ticketStart + '-' + ticketEnd + ' of ' + tickets.length);
+ // $('current-tickets-page').append(`${currentPage} of ${numPages}`);
+
+  const container = $('.all-tickets__tickets').empty();
+
+  for (let i = (currentPage-1) * elementsPerPage; i < (currentPage * elementsPerPage) && i < tickets.length; i++) {
+    let date = new Date(tickets[i].deadlineDate);
 
     container.append(`
       <div class="all-tickets__ticket">
         <div class="all-tickets__ticket-details">
             <div class="all-tickets__ticket-photo">
-                <img class="all-tickets__ticket-image" alt="" src="${ticket.photoUrl}"/>
+                <img class="all-tickets__ticket-image" alt="" src="${tickets[i].photoUrl}"/>
             </div>
             <div class="all-tickets__ticket-info">
-              <div class="all-tickets__ticket-title">${ticket.title}</div>
-              <div class="all-tickets__last-update">Updated ${ticket.lastUpdate}</div>
+              <div class="all-tickets__ticket-title">${tickets[i].title}</div>
+              <div class="all-tickets__last-update">Updated ${tickets[i].lastUpdate}</div>
             </div>
         </div>
          <div class="all-tickets__customer">
-            <div class="all-tickets__customer-name">${ticket.customerName} ${ticket.customerSurname}</div>
-            <div class="all-tickets__created-date">on ${ticket.createdDate}</div>
+            <div class="all-tickets__customer-name">${tickets[i].customerName} ${tickets[i].customerSurname}</div>
+            <div class="all-tickets__created-date">on ${tickets[i].createdDate}</div>
          </div>
          <div class="all-tickets__date-time">
-            <div class="all-tickets__date">${moment(ticket.deadlineDate).format("MMM DD, YYYY")}</div>
-            <div class="all-tickets__time">${moment(ticket.deadlineDate).format('LT')}</div>
+            <div class="all-tickets__date">${moment(date).format("MMM DD, YYYY")}</div>
+            <div class="all-tickets__time">${moment(date).format('LT')}</div>
          </div>
-         <div class="all-tickets__priority all-tickets__priority-${ticket.priority}">${ticket.priority}</div>
+         <div class="all-tickets__priority all-tickets__priority-${tickets[i].priority}">${tickets[i].priority}</div>
          <div class="all-tickets__more-button">
             <i class="all-tickets__button-icon fas fa-ellipsis-v"></i>
          </div>
       </div>
       <div class="all-tickets__ticket-border"></div>
     `);
-  });
+  }
 }
 
 // unresolved tickets from json

@@ -148,17 +148,42 @@
           </div>
         </div>
       </div>
-      <div class="all-tickets__tickets">
-        <div class="all-tickets__ticket">
-          <div class="all-tickets__ticket-details">Ticket details</div>
-          <div class="all-tickets__customer-name">Customer name</div>
-          <div class="all-tickets__date">Date</div>
-          <div class="all-tickets__priority">Priority</div>
-          <div class="all-tickets__ticket-menu-button"></div>
+      <div class="all-tickets__tickets-table-header table-header">
+        <div class="table-header__container">
+          <div class="table-header__details">Ticket details</div>
+          <div class="table-header__customer">Customer name</div>
+          <div class="table-header__date">Date</div>
+          <div class="table-header__priority">Priority</div>
+          <div class="table-header__menu-button"></div>
         </div>
-        <div class="all-tickets__ticket-border"></div>
+        <div class="table-header__ticket-border"></div>
+      </div>
+      <div class="all-tickets__tickets">
 
       </div>
+
+      <div class="all-tickets__footer">
+        <label class="all-tickets__tickets-per-page-selector-label subtitle">
+          Rows per page:
+          <select class="all-tickets__tickets-per-page-selector">
+            <option value="8">8</option>
+            <option value="16">16</option>
+          </select>
+        </label>
+        <img alt="" src="img/select-arrow.svg" class="all-tickets__tickets-per-page-selector-icon">
+        <span class="all-tickets__current-page subtitle" id="current-tickets-page"></span>
+        <button class="all-tickets__page-button" onclick="prevPage()" id="btn_prev">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 13L1.07071 7.07071C1.03166 7.03166 1.03166 6.96834 1.07071 6.92929L7 1" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="all-tickets__page-button" onclick="nextPage()" id="btn_next">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 13L6.92929 7.07071C6.96834 7.03166 6.96834 6.96834 6.92929 6.92929L1 1" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
     </section>
 
   </section>

@@ -1,0 +1,49 @@
+@import "variables";
+
+.table-header {
+
+  width: 100%;
+
+  .table-header__container {
+    margin: 0 $space-between;
+    padding-top: 0;
+    padding-bottom: 1%;
+    color: $tickets-table-title-color;
+    font-weight: 700;
+    font-size: 0.875em;
+    letter-spacing: 0.2px;
+
+    display: grid;
+    grid-template-columns: 43% 23% 17% 12% auto;
+    grid-template-rows: auto;
+
+    .table-header__details {
+    }
+
+    .table-header__customer {
+
+    }
+
+    .table-header__date {
+
+    }
+
+    .table-header__priority {
+      background-color: $white;
+      text-transform: none;
+      color: $tickets-table-title-color;
+      font-size: 1em;
+      letter-spacing: 0.2px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .table-header__menu-button {
+
+    }
+  }
+
+  .table-header__ticket-border {
+    border-bottom: 2px solid $ticket-border;
+  }
+}
