@@ -39,7 +39,10 @@ const renderSummary = ({ summaryCards }) => {
 let currentPage = 1;
 let elementsPerPage = 8;
 
-// $('all-tickets__tickets-per-page-selector')
+ // $('all-tickets__tickets-per-page-selector').on('click', function (e) {
+ //   e.preventDefault();
+ //
+ // })
 
 function prevPage()
 {
@@ -61,7 +64,7 @@ function reRenderAllTickets () {
 
 const renderAllTickets = ({tickets}) => {
   let numPages = Math.ceil(tickets.length / elementsPerPage);
-  
+
   if ( currentPage > numPages ) {
     currentPage--;
     return;
@@ -71,10 +74,11 @@ const renderAllTickets = ({tickets}) => {
     return ;
   }
 
-  let page_span = document.getElementById("current-tickets-page");
+  let pagesRanges = document.getElementById("current-tickets-page");
   let ticketStart = (currentPage-1) * elementsPerPage + 1;
-  let ticketEnd = currentPage * elementsPerPage;
-  page_span.innerHTML = (ticketStart + '-' + ticketEnd + ' of ' + numPages);
+  let ticketEnd = (currentPage * elementsPerPage) < tickets.length ?
+                  (currentPage * elementsPerPage) : tickets.length;
+  pagesRanges.innerHTML = (ticketStart + '-' + ticketEnd + ' of ' + tickets.length);
  // $('current-tickets-page').append(`${currentPage} of ${numPages}`);
 
   const container = $('.all-tickets__tickets').empty();
