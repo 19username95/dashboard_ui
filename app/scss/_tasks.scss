@@ -1,0 +1,151 @@
+@import "variables";
+
+.tasks {
+  .tasks__header {
+    padding: $space-between*2;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+
+    .tasks__title {
+      font-weight: 700;
+      font-size: 1.1875em;
+      letter-spacing: 0.4px;
+      color: $tickets-title-color;
+    }
+
+    .tasks__subtitle {
+      grid-row: 2;
+      grid-column: 1;
+      font-weight: 400;
+      font-size: 0.75em;
+      color: $grey;
+      letter-spacing: 0.1px;
+      padding-top: 10px;
+    }
+
+    .tasks__details-link {
+      grid-row: 1;
+      grid-column: 2;
+      justify-self: right;
+      letter-spacing: 0.2px;
+      color: $blue;
+      font-size: 0.875em;
+      align-self: center;
+      text-decoration: none;
+    }
+  }
+
+  .tasks__tasks-list {
+    padding-bottom: $space-between/2;
+
+    .tasks__create-task {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 75% 25%;
+      grid-template-rows: minmax(15px, 30px);
+      font-size: 0.875em;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      padding: 4% $space-between*2;
+
+      .tasks__create-title {
+        align-self: center;
+      }
+
+      .tasks__create-button {
+        background-color: #F0F1F7;
+        border-radius: 8px;
+        justify-self: right;
+        align-self: center;
+        display: grid;
+        width: 24px;
+        height: 24px;
+
+
+        .tasks__create-button-plus {
+          align-self: center;
+          justify-self: center;
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+
+    .tasks__list-border {
+      width: 100%;
+      border-bottom:$border;
+    }
+    .task {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 10% 65% 25%;
+      grid-template-rows: minmax(15px, 30px);
+      font-size: 0.875em;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      padding: 4% $space-between*2;
+
+
+      .task__checkbox {
+        grid-column: 1;
+        width: 16px;
+        height: 16px;
+        background-color: white;
+        border-radius: 50%;
+        vertical-align: middle;
+        border: 2px solid $light-grey;
+        -webkit-appearance: none;
+        outline: none;
+        cursor: pointer;
+        margin: 0;
+        align-self: center;
+      }
+      .task__checkbox:checked {
+        background-color: $blue;
+        border-color: $blue;
+        margin: 0;
+      }
+      .task__checkbox:checked:before {
+        background-image: url('../img/checkbox-point.svg');
+        background-size: 10px 7px;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        content: "";
+        margin: 0;
+      }
+
+      .task__title {
+        grid-column: 2;
+        color: $black;
+        align-self: center;
+      }
+
+      .task__status {
+        text-transform: uppercase;
+        background-color: $default-task-color;
+        color: $default-task-text-color;
+        align-self: center;
+        justify-self: right;
+        border-radius: 8px;
+        width: fit-content;
+        font-size: 0.785em;
+        font-weight: 700;
+        padding: 5% 10%;
+        letter-spacing: 0.5px;
+      }
+      .task__status-urgent {
+        background-color: $urgent-task-color;
+        color: $task-text-color;
+      }
+      .task__status-new {
+        background-color: $new-task-color;
+        color: $task-text-color;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,9 @@
+@import "variables";
+
+.container_columns_2 {
+  display: grid;
+  grid-template-columns: repeat(2, 50%-($space-between/2));
+  grid-template-rows: auto;
+  column-gap: $space-between;
+  margin: $space-between 0 0 0;
+}

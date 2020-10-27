@@ -1,0 +1,20 @@
+{
+  "unresolvedTickets": [
+    {
+      "name": "Waiting on Feature Request",
+      "count": 4238
+    },
+    {
+      "name": "Awaiting Customer Response",
+      "count": 1005
+    },
+    {
+      "name": "Awaiting Developer Fix",
+      "count": 914
+    },
+    {
+      "name": "Pending",
+      "count": 281
+    }
+  ]
+}

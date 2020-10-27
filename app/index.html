@@ -1,16 +1,208 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0,
+        maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.min.css">
   <link href="https://fonts.googleapis.com/css?family=Mulish" rel="stylesheet">
-    <script defer src="js/scripts.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+          integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+          crossorigin="anonymous"></script>
+  <script defer src="js/scripts.min.js"></script>
 </head>
 <body>
-    Hello world
+<section class="menu">
+  <div class="menu__body">
+    <div class="menu__logo">
+      <svg class="menu__image" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="16" fill="#3751FF"/>
+        <path d="M11 10C11 9.44772 11.4477 9 12 9H15.9905C18.2127 9 19.9333 9.60955 21.1524 10.8287C22.3841
+        12.0478 23 13.765 23 15.9803C23 18.2088 22.3841 19.9391 21.1524 21.1713C19.9333 22.3904 18.2127
+        23 15.9905 23H12C11.4477 23 11 22.5523 11 22V10Z" fill="url(#paint0_linear)"/>
+        <defs>
+          <linearGradient id="paint0_linear" x1="11" y1="9" x2="23" y2="23" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0.7"/>
+            <stop offset="1" stop-color="white"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="menu__title">Dashboard</div>
+    </div>
+    <ul class="menu__tabs">
+      <li class="menu__tab menu__tab_active" data-page-id="#overview-page">
+        <i class="menu__tab-icon fas fa-chart-pie"></i>
+        <span class="menu__tab-title">Overview</span>
+      </li>
+      <li class="menu__tab" data-page-id="#tickets-page">
+        <i class="menu__tab-icon fas fa-ticket-alt"></i>
+        <span class="menu__tab-title">Tickets</span>
+      </li>
+      <li class="menu__tab" data-page-id="contacts-page">
+        <i class="menu__tab-icon fas fa-users"></i>
+        <span class="menu__tab-title">Contacts</span>
+      </li>
+      <li class="menu__tab" data-page-id="tasks-page">
+        <i class="menu__tab-icon fas fa-user-tie"></i>
+        <span class="menu__tab-title">Tasks</span>
+      </li>
+      <li class="menu__tab" data-page-id="articles-page">
+        <i class="menu__tab-icon fas fa-book"></i>
+        <span class="menu__tab-title">Articles</span>
+      </li>
+
+      <li class="menu__tab" data-page-id="settings-page">
+        <i class="menu__tab-icon fas fa-cog"></i>
+        <span class="menu__tab-title">Settings</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="content">
+
+  <section id="overview-page" class="content__page content__page_active">
+
+    <section class="page-header">
+      <div class="page-header__title-container">
+        <div class="page-header__title title">Overview</div>
+      </div>
+      <div class="page-header__user-panel">
+        <div class="page-header__button">
+        <svg class="page-header__button-icon" width="16" height="16" viewBox="0 0 16 16"
+             fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="6.5" cy="6.5" r="5.75" stroke="#C5C7CD" stroke-width="1.5"/>
+          <path d="M11 11L15 15" stroke="#C5C7CD" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+        <div class="page-header__button">
+          <svg class="page-header__button-icon" width="14" height="16" viewBox="0 0 14 16"
+               fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.99999 16C8.10374 16 8.99905 15.1047 8.99905 14H5.00093C5.00093 15.1047 5.89624 16
+            6.99999 16ZM13.7309 11.3216C13.1272 10.6728 11.9975 9.69687 11.9975 6.5C11.9975 4.07188 10.295
+            2.12812 7.99937 1.65125V1C7.99937 0.447812 7.55187 0 6.99999 0C6.44812 0 6.00062 0.447812
+            6.00062 1V1.65125C3.70499 2.12812 2.00249 4.07188 2.00249 6.5C2.00249 9.69687 0.872804
+            10.6728 0.269054 11.3216C0.0815536 11.5231 -0.00157141 11.7641 -8.9117e-06 12C0.00342859
+            12.5125 0.405616 13 1.00312 13H12.9969C13.5944 13 13.9969 12.5125 14 12C14.0016
+            11.7641 13.9184 11.5228 13.7309 11.3216Z" fill="#C5C7CD"/>
+          </svg>
+          <div class="page-header__button-new-notification"></div>
+        </div>
+        <div class="page-header__divider"></div>
+        <div class="page-header__user-names">Jones Ferdinand</div>
+        <img class="page-header__user-avatar" src="mocks/images/user-avatar.png" alt="">
+      </div>
+    </section>
+
+    <section class="summary__cards"></section>
+
+    <div class="container_columns_2">
+      <section class="unresolved-tickets card">
+        <div class="unresolved-tickets__header">
+          <div class="unresolved-tickets__title">Unresolved tickets</div>
+          <div class="unresolved-tickets__subtitle">Group: <span class="unresolved-tickets__group">Support</span></div>
+          <a class="unresolved-tickets__details-link">View details</a>
+        </div>
+        <div class="unresolved-tickets__items"></div>
+      </section>
+
+      <section class="tasks card">
+        <div class="tasks__header">
+          <div class="tasks__title">Tasks</div>
+          <div class="tasks__subtitle">Today</div>
+          <a class="tasks__details-link">View details</a>
+        </div>
+        <div class="tasks__tasks-list">
+          <div class="tasks__create-task">
+            <div class="tasks__create-title">Create task</div>
+            <div class="tasks__create-button">
+              <svg class="tasks__create-button-plus" width="12" height="12" viewBox="0 0 12 12"
+                   fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 1V11" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round"/>
+                <path d="M11 6L1 6" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="all-tickets card">
+      <div class="all-tickets__header">
+        <div class="all-tickets__title">All tickets</div>
+        <div class="all-tickets__buttons-panel">
+          <div class="all-tickets__button">
+            <i class="all-tickets__button-icon fas fa-sort-amount-up"></i>
+            <span class="all-tickets__button-title">Sort</span>
+          </div>
+          <div class="all-tickets__button">
+            <i class="all-tickets__button-icon fas fa-filter"></i>
+            <span class="all-tickets__button-title">Filter</span>
+          </div>
+        </div>
+      </div>
+      <div class="all-tickets__tickets-table-header table-header">
+        <div class="table-header__container">
+          <div class="table-header__details">Ticket details</div>
+          <div class="table-header__customer">Customer name</div>
+          <div class="table-header__date">Date</div>
+          <div class="table-header__priority">Priority</div>
+          <div class="table-header__menu-button"></div>
+        </div>
+        <div class="table-header__ticket-border"></div>
+      </div>
+      <div class="all-tickets__tickets">
+
+      </div>
+
+      <div class="all-tickets__footer">
+        <label class="all-tickets__tickets-per-page-selector-label subtitle">
+          Rows per page:
+          <select class="all-tickets__tickets-per-page-selector">
+            <option value="8">8</option>
+            <option value="16">16</option>
+          </select>
+        </label>
+        <img alt="" src="img/select-arrow.svg" class="all-tickets__tickets-per-page-selector-icon">
+        <span class="all-tickets__current-page subtitle" id="current-tickets-page"></span>
+        <button class="all-tickets__page-button" onclick="prevPage()" id="btn_prev">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 13L1.07071 7.07071C1.03166 7.03166 1.03166 6.96834 1.07071 6.92929L7 1" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="all-tickets__page-button" onclick="nextPage()" id="btn_next">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 13L6.92929 7.07071C6.96834 7.03166 6.96834 6.96834 6.92929 6.92929L1 1" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+    </section>
+
+  </section>
+<!--
+  <section id="tickets-page" class="content__page ">
+  </section>
+
+  <section id="contacts-page" class="content__page ">
+  </section>
+
+  <section id="tasks-page" class="content__page ">
+  </section>
+
+  <section id="articles-page" class="content__page ">
+  </section>
+
+  <section id="settings-page" class="content__page ">
+  </section>
+-->
+</section>
 </body>
 </html>

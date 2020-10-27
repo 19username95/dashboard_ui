@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "completed": false,
+      "title": "Finish ticket update",
+      "status": "urgent"
+    },
+    {
+      "id": 2,
+      "completed": false,
+      "title": "Create new ticket example",
+      "status": "new"
+    },
+    {
+      "id": 3,
+      "completed": true,
+      "title": "Update ticket report",
+      "status": "default"
+    }
+  ]
+}
